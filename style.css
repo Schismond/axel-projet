@@ -1,0 +1,265 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+ /*  text-transform: uppercase; cette commande transforme tout le text dans la pages vers des majucules*/
+  font-family: 'Roboto','Poppins' ,Verdana, Geneva, Tahoma, sans-serif;
+  font-weight: 600;
+}
+
+input[type="number"] {
+  -webkit-appearance: none; /* Pour Safari et Chrome */
+  -moz-appearance: textfield; /* Pour Firefox */
+  appearance: textfield; /* Pour les autres navigateurs */
+}
+
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+  -webkit-appearance: none; /* Pour Safari et Chrome */
+  margin: 0; /* Réinitialise la marge par défaut */
+}
+
+
+:root{
+  /* changer les couleurs içi */
+--orange: #ff5c00;
+--gray:   #999;
+--text-color: #fff;
+--border-color : #fff;
+--background-color: #000;
+}
+
+body{
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background-color: var(--background-color);
+  color: var(--text-color);
+}
+
+.info{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 12px;
+}
+
+/*
+#selectOffre c'est pour le choix de l'offre dans la premiere page
+#gender c'est pour le choix du sexe dans la deuxieme page
+*/
+
+#selectOffre , #gender, input{
+  padding: 1rem;
+  border: 2px solid var(--border-color);
+  border-radius: 6px;
+  color: var(--text-color) ;
+  background-color: var(--background-color); 
+}
+
+#selectOffre:focus ,#gender:focus {
+  /* donne la couleur orange quand tu clickes sur Select*/
+  border: 2px solid var(--orange);
+  box-shadow:0 0 5px var(--orange);
+}
+
+input:focus{
+  /* donne la couleur orange quand tu clickes sur les input*/
+  outline:none;
+  border:1px solid var(--orange);
+  box-shadow:0 0 5px var(--orange);
+}
+
+/*ces -webkit-autofill est pour anuller l'auto fill qui donne un fond blanc et un text noir */
+input:-webkit-autofill {
+  -webkit-text-fill-color: var(--text-color) !important;
+  -webkit-box-shadow: 0 0 0 30px black inset !important;
+}
+
+input,
+input:-webkit-autofill {
+  color: var(--text-color);
+  background-color: var(--background-color);
+  caret-color: var(--border-color);
+}
+
+h1{
+  margin: 12px 0px;
+  color: var(--orange);
+}
+/* style pour le button */
+.btn{
+  padding: 12px 24px;
+  margin: 12px 0px;
+  background-color: var(--orange);
+  color: var(--text-color);
+  border: none;
+}
+.btn:hover{
+  background-color: #ff3300;
+}
+
+
+
+form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  border: 2px solid var(--gray) ;
+  width: 60%;
+  margin: 24px auto;
+}
+
+#firstPage > .form-container {
+  /* vous pouvez modifier içi le grid de la 3ème page */
+  grid-template-columns: auto;
+}
+
+.form-container{
+  width: 80%;
+  border-top: 2px solid var(--orange);
+  border-bottom: 2px solid var(--orange);
+  padding: 24px 0px;
+
+  display: grid;
+  /* vous pouvez modifier içi le grid de la 2ème page */
+  grid-template-columns: repeat(3,1fr);
+  gap: 24px;
+}
+
+#thirdPage > .form-container {
+  /* vous pouvez modifier içi le grid de la 3ème page */
+  grid-template-columns: repeat(2,1fr);
+  gap: 24px;
+}
+
+
+/* ne touche pas */
+.stepper-wrapper {
+  display: flex;
+  justify-content: space-between;
+  padding: 24px 0px;
+}
+.stepper-item {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  flex: 1;
+}
+.stepper-item>* {
+
+padding: 12px 0px;
+}
+
+.stepper-item::before {
+  position: absolute;
+  content: "";
+  border-bottom: 2px solid var(--gray);
+  width: 100%;
+  top: 20px;
+  left: -50%;
+  z-index: 2;
+} 
+
+.stepper-item::after {
+  position: absolute;
+  content: "";
+  border-bottom: 2px solid var(--gray);
+  width: 100%;
+  top: 20px;
+  left: 50%;
+  z-index: 2;
+}
+
+.stepper-item .step-counter {
+  position: relative;
+  z-index: 5;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: var(--gray);
+}
+
+.stepper-item.active {
+  font-weight: bold;
+}
+
+.stepper-item.active .step-counter {
+  background-color:  var(--orange);
+}
+
+.stepper-item.completed .step-counter {
+  background-color:var(--orange);
+  
+}
+
+.stepper-item.completed::after {
+  position: absolute;
+  content: "";
+  border-bottom: 2px solid var(--orange);
+  width: 100%;
+  top: 20px;
+  left: 50%;
+  z-index: 3;
+}
+
+.stepper-item:first-child::before {
+  content: none;
+}
+.stepper-item:last-child::after {
+  content: none;
+}
+
+/* cette commande donne la couleur orange a l'élément active seuleument */
+.stepper-item.active .step-name {
+  color: var(--orange);
+} 
+
+/* cette commande donne la couleur orange a l'élément active et finie */
+
+/* .stepper-item.active .step-name,
+.stepper-item.completed .step-name {
+  color: var(--orange);
+} */
+
+/*Activé une est supprimer l'autre*/
+
+
+
+
+
+/* c'est a vous de modifier les media query bon courage :) */
+@media only screen and (max-width: 480px) {
+  form {
+    width: 90vw;
+  }
+
+  .form-container {
+    display: grid;
+    grid-template-columns: auto;
+    gap: 24px;
+  }
+  #thirdPage > .form-container {
+    /* vous pouvez modifier içi le grid de la 3ème page */
+    grid-template-columns: auto;
+    gap: 24px;
+  }
+}
+
+@media only screen and (min-width: 481px) and (max-width: 1023px) {
+  .form-container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 24px;
+  }
+  
+
+  input, select {
+    max-width: 230px;
+  }
+}

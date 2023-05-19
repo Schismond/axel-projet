@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <script src="script.js" defer></script>
+    <title>gym</title>
+  </head>
+  <body>
+    <!-- Progress Bar -->
+    <div class="stepper-wrapper">
+      <div class="stepper-item active">
+        <div class="step-counter">1</div>
+        <div class="step-name">ABONNEMENT</div>
+      </div>
+      <div class="stepper-item">
+        <div class="step-counter">2</div>
+        <div class="step-name">INFORMATIONS</div>
+      </div>
+      <div class="stepper-item">
+        <div class="step-counter">3</div>
+        <div class="step-name">SECURITE</div>
+      </div>
+      <div class="stepper-item">
+        <div class="step-counter">4</div>
+        <div class="step-name">PAIEMENT</div>
+      </div>
+    </div>
+
+    <!-- 1ERE PAGE -->
+
+    <form method="#" id="firstPage">
+      <h1>abonnement</h1>
+      <div class="form-container">
+
+        <div class="info">
+          <label for="selectOption">Sélectionnez une option :</label>
+          <select id="selectOffre" name="selectOffre">
+            <option value="option1">Option 1</option>
+            <option value="option2">Option 2</option>
+            <option value="option3">Option 3</option>
+          </select>
+        </div>
+
+      </div>
+      <input type="submit" value="Suivant" class="btn" />
+    </form>
+
+    <!-- 2EME PAGE -->
+
+    <form method="#" id="secondPage" style="display: none">
+      <h1>informations</h1>
+      <div class="form-container">
+
+        <div class="info">
+          <label for="name">Nom :</label>
+          <input type="text" id="name" name="name" pattern="^[A-Za-z]{3,20}$" required  />
+        </div>
+
+        <div class="info">
+          <label for="familyName">Prénom :</label>
+          <input type="text" id="familyName" name="familyName" pattern="^[A-Za-z]{3,20}$" required />
+        </div>
+        
+        <div class="info">
+          <label for="birthdate">Date de naissance :</label>
+          <input type="date" id="birthdate" name="birthdate" required />
+        </div>
+        
+        <div class="info">
+          <label for="height">Taille :</label>
+          <input type="number" min="20" max="220" id="height" name="height" required />
+        </div>
+
+        <div class="info">
+          <label for="weight">Poids :</label>
+          <input type="number" min="20" max="250" id="weight" name="weight" required />
+        </div>
+
+        <div class="info">
+          <label for="gender">Sexe :</label>
+          <select id="gender" name="selectGender">
+            <option value="Homme">Homme</option>
+            <option value="Femme">Femme</option>
+          </select>
+        </div>
+
+      </div>
+      <div class="buttons">
+        <input type="button" value="precedent" class="btn" id="precedent1" >
+        <input type="submit" value="Suivant" class="btn" />
+      </div>
+    </form>
+
+    <!-- 3EME PAGE -->
+
+    <form method="#" id="thirdPage" style="display: none">
+      <h1>Securité</h1>
+      <div class="form-container">
+        
+        <div class="info">
+          <label for="phoneNumber">Numéro :</label>
+          <input type="tel" id="phoneNumber" name="phoneNumber" pattern="0[5-7][0-9]{8}" oninvalid="setCustomValidity('SVP enter un numéro qui commance avec 05, 06, ou 07. le numéro doit avoir 10 chiffres')" oninput="setCustomValidity('')" required />
+        </div>
+
+        <div class="info">
+          <label for="email">Email :</label>
+          <input type="email" id="email" name="email" required />
+        </div>
+
+
+        <div class="info">
+          <label for="password">Mot de passe :</label>
+          <input type="password" id="password1" name="password" pattern="(?=^.{8,}$)((?=.*\d)|(?=.*\W+))(?![.\n])(?=.*[A-Z])(?=.*[a-z]).*$" required />
+        </div>
+
+        <div class="info">
+          <label for="confirm-password">confirmer mot de passe :</label>
+          <input type="password" id="password2" name="password" required />
+        </div>
+
+      </div>
+      <div class="buttons">
+        <input type="button" value="precedent" class="btn" id="precedent2" >
+        <input type="submit" value="Suivant" class="btn"  id="submitBtn" />
+      </div>
+    </form>
+
+    <!-- 4EME PAGE -->
+
+    <form method="#" id="fourthPage" style="display: none">
+      <h1>paiement</h1>
+      <div class="form-container">
+        <div class="info">
+          <label for="cardNumber">Numéro de carte :</label>
+          <input type="text" id="cardNumber" name="cardNumber" required  />
+        </div>
+
+        <div class="info">
+          <label for="cardName">Nom sur la carte :</label>
+          <input type="text" id="cardName" name="cardName" pattern="^[A-Za-z]{2,20}$" required  />
+        </div>
+
+        <div class="info">
+          <label for="expiryDate">Date d'expiration :</label>
+          <input type="text" id="expiryDate" name="expiryDate" required  />
+        </div>
+
+        <div class="info">
+          <label for="cvv">CVV :</label>
+          <input type="text" id="cvv" name="cvv" required  />
+        </div>
+
+      </div>
+      <div class="buttons">
+        <input type="button" value="precedent" class="btn" id="precedent3" >
+        <input type="submit" value="finir " class="btn" />
+      </div>
+    </form>
+
+  </body>
+</html>
