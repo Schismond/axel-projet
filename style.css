@@ -7,17 +7,6 @@
   font-weight: 600;
 }
 
-input[type="number"] {
-  -webkit-appearance: none; /* Pour Safari et Chrome */
-  -moz-appearance: textfield; /* Pour Firefox */
-  appearance: textfield; /* Pour les autres navigateurs */
-}
-
-input[type="number"]::-webkit-inner-spin-button,
-input[type="number"]::-webkit-outer-spin-button {
-  -webkit-appearance: none; /* Pour Safari et Chrome */
-  margin: 0; /* Réinitialise la marge par défaut */
-}
 
 
 :root{
@@ -83,6 +72,19 @@ input:-webkit-autofill {
   caret-color: var(--border-color);
 }
 
+/*supprimer les valeurs par défaut de input number*/
+input[type="number"] {
+  -webkit-appearance: none; /* Pour Safari et Chrome */
+  -moz-appearance: textfield; /* Pour Firefox */
+  appearance: textfield; /* Pour les autres navigateurs */
+}
+
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+  -webkit-appearance: none; /* Pour Safari et Chrome */
+  margin: 0; /* Réinitialise la marge par défaut */
+}
+
 h1{
   margin: 12px 0px;
   color: var(--orange);
@@ -121,19 +123,24 @@ form {
   border-top: 2px solid var(--orange);
   border-bottom: 2px solid var(--orange);
   padding: 24px 0px;
-
   display: grid;
-  /* vous pouvez modifier içi le grid de la 2ème page */
-  grid-template-columns: repeat(3,1fr);
   gap: 24px;
 }
 
-#thirdPage > .form-container {
-  /* vous pouvez modifier içi le grid de la 3ème page */
+.page:nth-child(3) >.form-container{
+    /* vous pouvez modifier içi le grid de la 2ème page */
+    grid-template-columns: repeat(3,1fr);
+}
+
+.page:nth-child(4) > .form-container , .page:nth-child(5) > .form-container {
+  /* vous pouvez modifier içi le grid de la 3eme et 4eme page (c bizzare huh) */
   grid-template-columns: repeat(2,1fr);
-  gap: 24px;
 }
 
+.page:nth-child(2) > .form-container {
+  /* vous pouvez modifier içi le grid de la 1ere page (c bizzare huh) */
+  grid-template-columns: auto;
+}
 
 /* ne touche pas */
 .stepper-wrapper {
@@ -244,21 +251,16 @@ padding: 12px 0px;
     grid-template-columns: auto;
     gap: 24px;
   }
-  #thirdPage > .form-container {
-    /* vous pouvez modifier içi le grid de la 3ème page */
-    grid-template-columns: auto;
-    gap: 24px;
-  }
 }
 
 @media only screen and (min-width: 481px) and (max-width: 1023px) {
+
   .form-container {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     gap: 24px;
   }
   
-
   input, select {
     max-width: 230px;
   }

@@ -9,6 +9,7 @@
     <title>gym</title>
   </head>
   <body>
+
     <!-- Progress Bar -->
     <div class="stepper-wrapper">
       <div class="stepper-item active">
@@ -31,7 +32,7 @@
 
     <!-- 1ERE PAGE -->
 
-    <form method="#" id="firstPage">
+    <form method="#" class="page">
       <h1>abonnement</h1>
       <div class="form-container">
 
@@ -50,18 +51,18 @@
 
     <!-- 2EME PAGE -->
 
-    <form method="#" id="secondPage" style="display: none">
+    <form method="#" class="page" style="display: none">
       <h1>informations</h1>
       <div class="form-container">
-
+        
         <div class="info">
-          <label for="name">Nom :</label>
-          <input type="text" id="name" name="name" pattern="^[A-Za-z]{3,20}$" required  />
+          <label for="familyName">Nom :</label>
+          <input type="text" id="familyName" placeholder="John" name="familyName" pattern="^[A-Za-z]{3,20}$" required />
         </div>
 
         <div class="info">
-          <label for="familyName">Prénom :</label>
-          <input type="text" id="familyName" name="familyName" pattern="^[A-Za-z]{3,20}$" required />
+          <label for="name">Prénom :</label>
+          <input type="text" id="name" name="name" placeholder="John" pattern="^[A-Za-z]{3,20}$" required  />
         </div>
         
         <div class="info">
@@ -71,12 +72,12 @@
         
         <div class="info">
           <label for="height">Taille :</label>
-          <input type="number" min="20" max="220" id="height" name="height" required />
+          <input type="number" min="20" max="220" placeholder="180" id="height" name="height" required />
         </div>
 
         <div class="info">
           <label for="weight">Poids :</label>
-          <input type="number" min="20" max="250" id="weight" name="weight" required />
+          <input type="number" min="20" max="250" placeholder="80" id="weight" name="weight" required />
         </div>
 
         <div class="info">
@@ -89,14 +90,14 @@
 
       </div>
       <div class="buttons">
-        <input type="button" value="precedent" class="btn" id="precedent1" >
+        <input type="button" value="precedent" class="btn precedentBtn">
         <input type="submit" value="Suivant" class="btn" />
       </div>
     </form>
 
     <!-- 3EME PAGE -->
 
-    <form method="#" id="thirdPage" style="display: none">
+    <form method="#" class="page" style="display: none">
       <h1>Securité</h1>
       <div class="form-container">
         
@@ -123,14 +124,14 @@
 
       </div>
       <div class="buttons">
-        <input type="button" value="precedent" class="btn" id="precedent2" >
+        <input type="button" value="precedent" class="btn precedentBtn" >
         <input type="submit" value="Suivant" class="btn"  id="submitBtn" />
       </div>
     </form>
 
     <!-- 4EME PAGE -->
 
-    <form method="#" id="fourthPage" style="display: none">
+    <form method="#" class="page" style="display: none">
       <h1>paiement</h1>
       <div class="form-container">
         <div class="info">
@@ -155,7 +156,7 @@
 
       </div>
       <div class="buttons">
-        <input type="button" value="precedent" class="btn" id="precedent3" >
+        <input type="button" value="precedent" class="btn precedentBtn" >
         <input type="submit" value="finir " class="btn" />
       </div>
     </form>
