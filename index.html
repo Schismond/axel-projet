@@ -9,8 +9,8 @@
     <title>gym</title>
   </head>
   <body>
-
     <!-- Progress Bar -->
+    
     <div class="stepper-wrapper">
       <div class="stepper-item active">
         <div class="step-counter">1</div>
@@ -35,7 +35,6 @@
     <form method="#" class="page">
       <h1>abonnement</h1>
       <div class="form-container">
-
         <div class="info">
           <label for="selectOption">Sélectionnez une option :</label>
           <select id="selectOffre" name="selectOffre">
@@ -44,7 +43,6 @@
             <option value="option3">Option 3</option>
           </select>
         </div>
-
       </div>
       <input type="submit" value="Suivant" class="btn" />
     </form>
@@ -54,30 +52,74 @@
     <form method="#" class="page" style="display: none">
       <h1>informations</h1>
       <div class="form-container">
-        
         <div class="info">
           <label for="familyName">Nom :</label>
-          <input type="text" id="familyName" placeholder="John" name="familyName" pattern="^[A-Za-z]{3,20}$" required />
+          <input
+            type="text"
+            id="familyName"
+            placeholder="John"
+            name="familyName"
+            pattern="^[A-Za-z]{3,20}$"
+            oninvalid="setCustomValidity('SVP enter un nom entre 3 et 20 lettres sans chiffres')"
+            oninput="setCustomValidity('')"
+            required
+          />
         </div>
 
         <div class="info">
           <label for="name">Prénom :</label>
-          <input type="text" id="name" name="name" placeholder="John" pattern="^[A-Za-z]{3,20}$" required  />
+          <input
+            type="text"
+            id="name"
+            name="name"
+            placeholder="John"
+            pattern="^[A-Za-z]{3,20}$"
+            oninvalid="setCustomValidity('SVP enter un nom entre 3 et 20 lettres sans chiffres')"
+            oninput="setCustomValidity('')"
+            required
+          />
         </div>
-        
+
         <div class="info">
           <label for="birthdate">Date de naissance :</label>
-          <input type="date" id="birthdate" name="birthdate" required />
+          <input
+            type="date"
+            id="birthdate"
+            name="birthdate"
+            oninvalid="setCustomValidity('SVP enter une date de naissance valide')"
+            oninput="setCustomValidity('')"
+            required
+          />
         </div>
-        
+
         <div class="info">
           <label for="height">Taille :</label>
-          <input type="number" min="20" max="220" placeholder="180" id="height" name="height" required />
+          <input
+            type="number"
+            min="20"
+            max="220"
+            placeholder="180"
+            id="height"
+            name="height"
+            oninvalid="setCustomValidity('SVP enter un nombre valide')"
+            oninput="setCustomValidity('')"
+            required
+          />
         </div>
 
         <div class="info">
           <label for="weight">Poids :</label>
-          <input type="number" min="20" max="250" placeholder="80" id="weight" name="weight" required />
+          <input
+            type="number"
+            min="20"
+            max="250"
+            placeholder="80"
+            id="weight"
+            name="weight"
+            oninvalid="setCustomValidity('SVP enter un nombre valide')"
+            oninput="setCustomValidity('')"
+            required
+          />
         </div>
 
         <div class="info">
@@ -87,10 +129,9 @@
             <option value="Femme">Femme</option>
           </select>
         </div>
-
       </div>
       <div class="buttons">
-        <input type="button" value="precedent" class="btn precedentBtn">
+        <input type="button" value="precedent" class="btn precedentBtn" />
         <input type="submit" value="Suivant" class="btn" />
       </div>
     </form>
@@ -100,32 +141,53 @@
     <form method="#" class="page" style="display: none">
       <h1>Securité</h1>
       <div class="form-container">
-        
         <div class="info">
           <label for="phoneNumber">Numéro :</label>
-          <input type="tel" id="phoneNumber" name="phoneNumber" pattern="0[5-7][0-9]{8}" oninvalid="setCustomValidity('SVP enter un numéro qui commance avec 05, 06, ou 07. le numéro doit avoir 10 chiffres')" oninput="setCustomValidity('')" required />
+          <input
+            type="tel"
+            id="phoneNumber"
+            name="phoneNumber"
+            pattern="0[5-7][0-9]{8}"
+            oninvalid="setCustomValidity('SVP enter un numéro qui commance avec 05, 06, ou 07. le numéro doit avoir 10 chiffres')"
+            oninput="setCustomValidity('')"
+            required
+          />
         </div>
 
         <div class="info">
           <label for="email">Email :</label>
-          <input type="email" id="email" name="email" required />
+          <input
+            type="email"
+            id="email"
+            name="email"
+            placeholder="example@mail.com"
+            oninvalid="setCustomValidity('SVP enter un email valide')"
+            oninput="setCustomValidity('')"
+            required
+          />
         </div>
-
 
         <div class="info">
           <label for="password">Mot de passe :</label>
-          <input type="password" id="password1" name="password" pattern="(?=^.{8,}$)((?=.*\d)|(?=.*\W+))(?![.\n])(?=.*[A-Z])(?=.*[a-z]).*$" required />
+          <input
+            type="password"
+            id="password1"
+            name="password"
+            pattern="(?=^.{8,}$)((?=.*\d)|(?=.*\W+))(?![.\n])(?=.*[A-Z])(?=.*[a-z]).*$"
+            oninvalid="setCustomValidity('SVP enter un mot de passe de au moins 8 caractères , majuscule et miniscule')"
+            oninput="setCustomValidity('')"
+            required
+          />
         </div>
 
         <div class="info">
           <label for="confirm-password">confirmer mot de passe :</label>
           <input type="password" id="password2" name="password" required />
         </div>
-
       </div>
       <div class="buttons">
-        <input type="button" value="precedent" class="btn precedentBtn" >
-        <input type="submit" value="Suivant" class="btn"  id="submitBtn" />
+        <input type="button" value="precedent" class="btn precedentBtn" />
+        <input type="submit" value="Suivant" class="btn" id="submitBtn" />
       </div>
     </form>
 
@@ -136,27 +198,34 @@
       <div class="form-container">
         <div class="info">
           <label for="cardNumber">Numéro de carte :</label>
-          <input type="text" id="cardNumber" name="cardNumber" required  />
+          <input type="text" id="cardNumber" name="cardNumber" required />
         </div>
 
         <div class="info">
           <label for="cardName">Nom sur la carte :</label>
-          <input type="text" id="cardName" name="cardName" pattern="^[A-Za-z]{2,20}$" required  />
+          <input
+            type="text"
+            id="cardName"
+            name="cardName"
+            pattern="^[A-Za-z]{2,20}$"
+            oninvalid="setCustomValidity('SVP enter un nom entre 3 et 20 lettres sans chiffres')"
+            oninput="setCustomValidity('')"
+            required
+          />
         </div>
 
         <div class="info">
           <label for="expiryDate">Date d'expiration :</label>
-          <input type="text" id="expiryDate" name="expiryDate" required  />
+          <input type="text" id="expiryDate" name="expiryDate" required />
         </div>
 
         <div class="info">
           <label for="cvv">CVV :</label>
-          <input type="text" id="cvv" name="cvv" required  />
+          <input type="text" id="cvv" name="cvv" required />
         </div>
-
       </div>
       <div class="buttons">
-        <input type="button" value="precedent" class="btn precedentBtn" >
+        <input type="button" value="precedent" class="btn precedentBtn" />
         <input type="submit" value="finir " class="btn" />
       </div>
     </form>
